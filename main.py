@@ -31,7 +31,7 @@ def chatbot(message, history):
 
     return history, history, temp_file.name
 
-with gr.Blocks() as demo:
+with gr.Blocks() as ui:
     gr.Markdown("## 🎙️ Groq Conversational Chatbot with Voice")
 
     chatbot_ui = gr.Chatbot(type="messages") 
@@ -43,4 +43,4 @@ with gr.Blocks() as demo:
     clear_btn.click(lambda: ([], [], None), None, [chatbot_ui, msg, audio_output])
 
 if __name__ == "__main__":
-    demo.launch()
+    ui.launch()
